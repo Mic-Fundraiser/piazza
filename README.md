@@ -69,6 +69,18 @@ Sono limiti scelti, non funzioni mancanti:
   scheda in cui premi il pulsante (`activeTab`);
 - **non manda niente a nessun server.**
 
+### I permessi, uno per uno
+
+| permesso | a che serve |
+|---|---|
+| `activeTab` | leggere la pagina **solo** nella scheda in cui premi il pulsante |
+| `scripting` | iniettare lì lo script che apre i commenti e legge il testo |
+| `storage` + `unlimitedStorage` | l'archivio nel browser, che senza il secondo verrebbe tagliato a 10 MB |
+| `127.0.0.1` / `localhost` | **solo** per una funzione facoltativa e spenta di partenza: mandare una copia a un'applicazione Flask che giri sul tuo computer. Spenta, non viene contattato nulla |
+
+Non c'è nessun permesso su `facebook.com` o `instagram.com`: senza il tuo clic
+sull'icona, l'estensione non vede niente.
+
 Se una di queste cose ti serve, questo non è lo strumento giusto.
 
 ## Privacy
