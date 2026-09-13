@@ -1,0 +1,108 @@
+/* Piazza — strato sottile sopra Vanilla Framework (vendor/vanilla-framework.min.css).
+   Qui stanno solo le cose che Vanilla non ha: il filo della conversazione, le
+   barre delle frequenze, il popup, e i caratteri di sistema al posto di Ubuntu,
+   che altrimenti verrebbe scaricato dalla rete a ogni apertura. */
+:root{color-scheme:light;--verde:#0e8420;--verde-scuro:#0b6a1a;--menta-velo:#eef8ef;--grigio:#666;--linea:#d9d9d9}
+html,body,button,input,select,textarea{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+[hidden]{display:none!important}
+.u-verde{color:var(--verde)}
+.brand-mark{width:1.75rem;height:1.75rem;margin-right:.5rem;flex:none;border-radius:.4rem}
+.l-navigation .p-panel__logo{display:flex;align-items:center;color:#fff;text-decoration:none;font-size:1.1rem;font-weight:600}
+.l-navigation .p-panel__logo:hover{text-decoration:none}
+.nav-sub{color:#aaa;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin:.25rem 0 1.25rem 2.25rem}
+.p-side-navigation__link .p-badge{margin-left:auto}
+.p-side-navigation__link{display:flex;align-items:center;gap:.5rem}
+.nav-foot{margin-top:auto;padding:1rem;color:#aaa;font-size:.75rem;border-top:1px solid #444}
+.l-navigation .p-panel__content{display:flex;flex-direction:column;min-height:calc(100vh - 3.5rem)}
+
+/* Schede delle raccolte */
+.scheda{display:flex;flex-direction:column;height:100%;color:inherit;text-decoration:none;transition:border-color .15s,box-shadow .15s}
+.scheda:hover{text-decoration:none;border-color:var(--verde);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.scheda .titolo{font-weight:600;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em;margin:.5rem 0 .25rem}
+.scheda .origine{font-size:.75rem;color:var(--grigio);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.scheda .numeri{display:flex;gap:1.5rem;margin:.75rem 0}
+.scheda .numeri b{font-size:1.4rem;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.scheda .numeri span{display:block;font-size:.7rem;color:var(--grigio);text-transform:uppercase;letter-spacing:.06em}
+.scheda .data{margin-top:auto;padding-top:.5rem;border-top:1px solid #eee;font-size:.75rem;color:var(--grigio);display:flex;justify-content:space-between;gap:.5rem}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.row.griglia > [class*=col-]{margin-bottom:1rem}
+
+/* Cifre in evidenza */
+.stat b{display:block;font-size:1.9rem;font-weight:600;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums;color:var(--verde-scuro)}
+.stat span{font-size:.75rem;color:var(--grigio);text-transform:uppercase;letter-spacing:.06em}
+
+/* Il filo della conversazione */
+.filo{display:grid;gap:.75rem}
+.item{position:relative;background:#fff;border:1px solid var(--linea);border-radius:4px;padding:1rem 1.25rem}
+.item.post{border-left:4px solid var(--verde)}
+.item.comment{margin-left:1.5rem}
+.item.reply{margin-left:3rem;background:#fafafa}
+.item.comment::before,.item.reply::before{content:"";position:absolute;left:-1rem;top:1.4rem;width:.75rem;border-top:1px solid var(--linea)}
+.item .meta{display:flex;align-items:center;flex-wrap:wrap;gap:.35rem .9rem;font-size:.8rem;color:var(--grigio);margin-bottom:.5rem}
+.item .meta select{width:auto;min-width:0;min-height:0;margin:0;padding:.1rem 1.6rem .1rem .5rem;font-size:.75rem;line-height:1.6}
+.item .meta .item-copy{margin-left:auto}
+.item .body{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65;margin:0}
+.item.post .body{font-size:1.05rem}
+.item mark{background:#fff3b0;color:inherit}
+
+/* Barre delle frequenze */
+.barre{display:grid;gap:.5rem}
+.barra{display:grid;grid-template-columns:minmax(6rem,10rem) 1fr 2.5rem;gap:.75rem;align-items:center;font-size:.85rem}
+.parola{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right}
+.traccia{height:.5rem;background:#e9e9e9;border-radius:2px;overflow:hidden}
+.riempimento{display:block;height:100%;background:var(--verde)}
+.conteggio{text-align:right;font-variant-numeric:tabular-nums;color:var(--grigio)}
+.terms{display:flex;flex-wrap:wrap;gap:.25rem}
+.domanda{font-size:1.05rem;line-height:1.5;margin:0}
+.snippet{color:#333}.snippet mark{background:#fff3b0}
+
+/* Strumenti sopra gli elenchi */
+.toolbar{display:flex;flex-wrap:wrap;gap:.75rem;align-items:flex-end;margin-bottom:1rem}
+.toolbar .p-search-box{flex:1 1 18rem;margin:0}
+.toolbar select{width:auto;min-width:11rem;margin:0}
+.inline-form{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.inline-form input{margin:0;flex:1 1 12rem}
+.riga-azioni{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.riga-azioni .p-button,.riga-azioni [class*=p-button--]{margin:0}
+.tra{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%);z-index:100;background:#111;color:#fff;padding:.6rem 1.1rem;border-radius:4px;font-size:.85rem;max-width:90vw;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.p-code-snippet__block{max-height:26rem;overflow:auto;white-space:pre-wrap;word-break:break-word}
+
+/* Popup */
+body.popup{width:384px;margin:0;background:#fff}
+.popup-testa{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.1rem;border-bottom:1px solid var(--linea)}
+.popup-testa .brand{font-weight:600;font-size:1.05rem;display:flex;align-items:center}
+.popup-corpo{padding:1rem 1.1rem}
+.popup-corpo .p-card{margin-bottom:1rem}
+.popup .p-segmented-control{margin:.25rem 0 .75rem}
+.popup .p-segmented-control__button{position:relative;cursor:pointer;margin:0}
+.popup .p-segmented-control__button input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:pointer}
+.popup .p-segmented-control__button:has(input:checked){background:var(--verde);color:#fff;border-color:var(--verde)}
+.popup .p-segmented-control__button:focus-within{outline:2px solid var(--verde);outline-offset:2px}
+.popup .p-segmented-control__button small{display:block;font-size:.65rem;opacity:.8;font-weight:400}
+.popup #raccogli{width:100%;margin:0}
+.popup-hint{font-size:.72rem;color:var(--grigio);text-align:center;margin:.6rem 0 0}
+.popup .p-notification--information,.popup .p-notification--caution,.popup .p-notification--negative{margin:.9rem 0 0}
+.popup .esito-numeri{display:flex;gap:1.5rem}
+.popup .esito-numeri b{font-size:1.5rem;font-weight:600;font-variant-numeric:tabular-nums;color:var(--verde-scuro)}
+.popup .esito-numeri span{display:block;font-size:.7rem;color:var(--grigio);text-transform:uppercase;letter-spacing:.06em}
+.popup-piede{display:flex;justify-content:space-between;padding:.75rem 1.1rem;border-top:1px solid var(--linea);font-size:.85rem}
+.traccia-lavoro{height:3px;background:#e9e9e9;margin-top:.9rem;border-radius:2px;overflow:hidden}
+.traccia-lavoro span{display:block;width:40%;height:100%;background:var(--verde);animation:scorri 1.4s infinite alternate}
+@keyframes scorri{to{transform:translateX(150%)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(max-width:620px){.item.comment{margin-left:.75rem}.item.reply{margin-left:1.5rem}.barra{grid-template-columns:5.5rem 1fr 2.2rem;gap:.5rem}}
+/* Il radio invisibile deve ricevere il clic anche dove c'e il testo del bottone. */
+.popup .p-segmented-control__button>*:not(input){pointer-events:none}
+.popup .p-segmented-control__button input{z-index:1}
+/* Rifiniture viste sulle schermate. */
+.p-search-box__input:placeholder-shown~.p-search-box__reset{display:none}
+.scheda .p-chip--information{align-self:flex-start;margin:.25rem 0 0}
+.row.statistiche{margin-bottom:1.25rem}
+.p-tabs__list,.p-tabs__item{list-style:none}
+.p-tabs__list{padding-left:0}
+.tra{align-items:flex-start}
+.popup .p-segmented-control__list{display:flex}
+.popup .p-segmented-control__button{flex:1 1 0;min-width:0;padding:.45rem .25rem;font-size:.85rem;line-height:1.25;white-space:normal;text-align:center}
+.popup .p-segmented-control__button small{font-size:.62rem;line-height:1.2;margin-top:.15rem}
+#contenuto h2.p-heading--4{margin-top:1.75rem}

@@ -1,0 +1,17 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Piazza</title>
+<link rel="stylesheet" href="vendor/vanilla-framework.min.css"><link rel="stylesheet" href="stile.css"></head><body class="popup">
+<header class="popup-testa"><div class="brand"><svg class="brand-mark" viewBox="0 0 128 128" aria-hidden="true"><rect width="128" height="128" rx="30" fill="#0e8420"/><path fill="#fff" d="M34 32h60a10 10 0 0 1 10 10v34a10 10 0 0 1-10 10H58L38 102V86h-4a10 10 0 0 1-10-10V42a10 10 0 0 1 10-10z"/><circle cx="48" cy="66" r="6" fill="#0e8420"/><circle cx="66" cy="60" r="7.5" fill="#0e8420"/><circle cx="86" cy="53" r="9" fill="#0e8420"/></svg>Piazza</div><a id="impostazioni" href="archivio.html#/impostazioni" aria-label="Impostazioni">Impostazioni</a></header>
+<main class="popup-corpo">
+<div class="p-card" id="contesto"><p class="p-text--small u-no-margin--bottom u-text--muted" id="dove">Controllo della pagina…</p><p class="u-no-margin--bottom u-truncate"><i class="p-icon--facebook" id="sito-icona"></i> <strong id="pagina-titolo">…</strong></p></div>
+<p class="p-muted-heading u-no-margin--bottom" id="mode-label">Come vuoi raccogliere?</p>
+<div class="p-segmented-control"><div class="p-segmented-control__list" role="radiogroup" aria-labelledby="mode-label">
+<label class="p-segmented-control__button"><input type="radio" name="modo" value="visibile">Visibile<small>senza scorrere</small></label>
+<label class="p-segmented-control__button"><input type="radio" name="modo" value="rapida">Rapida<small>fino a 1 minuto</small></label>
+<label class="p-segmented-control__button"><input type="radio" name="modo" value="completa" checked>Approfondita<small>fino a 3 minuti</small></label></div></div>
+<button class="p-button--positive" id="raccogli" disabled><span id="raccogli-label">Raccogli questa pagina</span></button>
+<p class="popup-hint" id="privacy-hint">Salvataggio locale · Commenti senza nomi</p>
+<div id="lavoro" hidden class="traccia-lavoro" role="progressbar" aria-label="Raccolta in corso"><span></span></div>
+<div id="avviso" class="p-notification--information" role="status" aria-live="polite" hidden><div class="p-notification__content"><p class="p-notification__message" id="avviso-testo"></p></div></div>
+<div id="esito" hidden class="p-card u-sv1"></div></main>
+<footer class="popup-piede"><a href="archivio.html" id="archivio">Apri l'archivio</a><a href="archivio.html#/diagnostica" id="diagnostica">Attività</a></footer>
+<script type="module" src="popup.js"></script></body></html>
